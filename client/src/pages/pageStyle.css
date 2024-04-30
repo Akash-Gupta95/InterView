@@ -1,0 +1,18 @@
+.subjectContainer div{
+    background-color: antiquewhite;
+    margin: 15px;
+    border-radius: 15px;
+    text-align: center;
+    padding: 5px 25px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+    box-shadow: 2px 2px 8px grey;
+}
+
+.subjectContainer div:hover{
+    box-shadow: 5px 15px 18px grey;
+
+}
+

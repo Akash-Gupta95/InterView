@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    overflow-x: hidden;
+
+}
+
+:root {
+    --primary-color: #14202e;
+    --secondary:#88a9c3;
+    --Dark:#000;
+    --White:#ffff;
+  }
+.mainContainer{
+    background-color: var(--secondary) ;
+
+}
