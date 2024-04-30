@@ -59,7 +59,7 @@ const AddQuestion = () => {
           <div className="row addQuestionRowDiv">
             
             {/* Subject coloum for display */}
-            <div className="col-12">
+            <div className="col-12 SubjectDiv">
               <select
                 name=""
                 id=""
@@ -74,8 +74,9 @@ const AddQuestion = () => {
             </div>
 
             {/* Topic coloum for display Topic  */}
-            <div className="col-12 ">
-            {bool ?( <div className="selectBox">
+            <div className="col-12 topicContainer">
+              <div className="col-6">
+              {bool ?( <div className="selectBox">
                 <select
                   name=""
                   id=""
@@ -92,13 +93,14 @@ const AddQuestion = () => {
                  </div>
               )
             }
-            <div className="btn btn-warning" onClick={HandeTopic}>Add-Topic</div>
-             
+              </div>
+              <div className="col-6">
+              <div className="btn btn-warning"  onClick={HandeTopic}>Add-Topic</div>
+              </div>
 
-             
             </div>
 
-            <div className="col-12 ">
+            <div className="col-12 QuestionAnsDiv">
               <textarea
                 name="Question"
                 id=""
@@ -118,7 +120,7 @@ const AddQuestion = () => {
               ></textarea>
             </div>
 
-            <div className="col-12">
+            <div className="col-12 submitBtn">
 
             <div className="btn btn-primary" onClick={HandleSubmit}>
               Submit

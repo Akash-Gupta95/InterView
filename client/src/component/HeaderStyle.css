@@ -2,7 +2,7 @@
     box-shadow:12px 12px 12px var(--Dark);
     height: 9vh;
     padding-top: 12px;
-    background-color: var(--primary-color);
+    background-color: var(--primary);
     color: white;
 }
 .headerRow{
@@ -29,6 +29,7 @@
     align-items: center;
     justify-content: space-around;
     
+    
 }
 
 .navBar-list{
@@ -38,6 +39,18 @@
     font-weight: 600;
     align-items: center;
     flex-wrap: nowrap;
-
+    
 }
 
+.borderEach{
+    border: 0.5px solid goldenrod;
+    padding: 5px;
+    border-radius: 5px;
+  
+}
+
+.borderEach:hover{
+    box-shadow: 12px 12px 12px var(--Dark);
+    padding: 8px;
+    
+}

@@ -4,11 +4,69 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
+    background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
 }
 .addQuestionRowDiv{
-    background-color: aquamarine;
+    background-color: white;
     height: 80vh;
     display: flex;
     align-items: center;
     text-align: center;
+    margin: 0 25px;
+    border-radius: 15px;
 }
+.SubjectDiv select {
+    width: 200px;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    text-shadow: 0px 1px 1px black;
+    background-color: var(--primary) ;
+    color: white;
+}
+
+.topicContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--primary);
+    height: 15vh;
+    border-radius: 15px;
+
+}
+.topicContainer select ,.topicContainer input {
+    width: 200px;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.QuestionAnsDiv textarea{
+width: 100%;
+height: 55px;
+background-color: #D3D3D3 ;
+border-radius: 15px;
+padding: 15px;
+
+}
+
+.submitBtn {
+   margin-bottom: 25px;
+}
+.submitBtn .btn {
+    padding: 5px 55px;
+    background-color: var(--primary);
+    box-shadow: 2px 8px 12px black;
+    border: none;
+}
+.submitBtn .btn:hover {
+    padding: 6px 85px;
+    color: goldenrod;
+
+}
+/* .submitBtn .btn:target {
+    background-color:goldenrod ;
+    color: white;
+} */

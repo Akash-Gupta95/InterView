@@ -19,14 +19,18 @@ const Header = () => {
         </div>
         <div className="col-6 navMenu">
          
-            <div className="col-4 NavHome">
-              <Link to={"/"} className="text-warning">
+            <div className="col-4 NavHome ">
+              <Link to={"/"} className="text-warning borderEach">
                 Home
               </Link>
             </div>
-            <div className="col-4 NavHome">Contact</div>
             <div className="col-4 NavHome ">
-              <Link className="text-white" to={"/AddQuestion"}>Add Question</Link>
+            <Link className="text-white borderEach" to={"/Contact"}>Contact</Link>
+              
+            </div>
+
+            <div className="col-4 NavHome ">
+              <Link className="text-white borderEach" to={"/AddQuestion"}>Add Question</Link>
             </div>
         
         </div>

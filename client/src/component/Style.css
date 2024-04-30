@@ -48,7 +48,7 @@ padding: 10px;
 .topics ul li{
     margin: 15px 0;
     padding: 15px;
-    background-color: var(--primary-color);
+    background-color: var(--primary);
     color: white;
      border-radius:0 15px 15px 0px;;
 
