@@ -1,10 +1,10 @@
-import Express from 'express';
+import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import routes from './routes/bankRoutes.js';
 import {connectDB} from './config/dbConfig.js'
 
-const App= Express();
+const App= express();
 // mongo Cridition
 const mongo = "mongodb+srv://reactDataBase:akash1234@todoapp.hjbu7lk.mongodb.net/"
 
@@ -13,7 +13,7 @@ App.use(cors());
 
 
 // USE
-App.use(Express.json());
+App.use(express.json());
 
 // Load Routes
 App.use('/api/bank', routes);
