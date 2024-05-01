@@ -18,35 +18,30 @@ const AddQuestion = () => {
 
 
   const HandleSubmit = async () => {
-    let questionData = {
-      subject,
-      topic,
-      Question,
-      answer,
-    };
-
-    try {
-      const data = await axios.post(
-        `${BASEURL}/api/bank/add-subquestions`,
-        {
-          questionData,
-        }
-      );
-    } catch (error) {
-      console.log(error);
+    // Ensure that all required fields are provided
+    if (!subject || !topic || !Question || !answer) {
+      console.error("Missing required fields");
+      return;
     }
-  };
-
-  const HandeTopic = () => {
   
-    if(bool){
-
-      setBool(false);
-    }else{
-      setBool(true);
-
+    const questionData = { subject, topic, Question, answer };
+  
+    try {
+      const response = await axios.post(
+        `${BASEURL}/api/bank/add-subquestions`,
+        { questionData }
+      );
+      console.log("Subquestion added successfully:", response.data);
+    } catch (error) {
+      console.error("Error adding subquestion:", error);
     }
   };
+  
+  const HandeTopic = () => {
+    // Toggle the boolean state
+    setBool((prevBool) => !prevBool);
+  };
+  
 
   useEffect(() => {
     const AllTopicBySubject = allSubject && allSubject.data.find((topic) => topic.subject === subject);
