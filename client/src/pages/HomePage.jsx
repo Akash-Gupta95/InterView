@@ -5,7 +5,7 @@ import DisplayQuestion from "../component/DisplayQuestion";
 import { multiStepContext } from "../contaxt/contaxtApi";
 import axios from "axios";
 import './pageStyle.css';
-
+import { BASEURL } from "../config";
 const HomePage = () => {
   const { Bank, setBank, topic, setTopics, setSubject , subject , allSubject , setAllSubject} = useContext(multiStepContext);
 
@@ -24,7 +24,7 @@ const HomePage = () => {
       let getsubject = "JavaScript";
 
       try {
-        const response = await axios.post(`http://localhost:4500/api/bank/getBySubject/${getsubject}`);
+        const response = await axios.post(`${BASEURL}/api/bank/getBySubject/${getsubject}`);
 
         if (response.data == null) {
           return;
@@ -39,7 +39,7 @@ const HomePage = () => {
       let getsubject = event.target.textContent;
 
       try {
-        const response = await axios.post(`http://localhost:4500/api/bank/getBySubject/${getsubject}`);
+        const response = await axios.post(`${BASEURL}/api/bank/getBySubject/${getsubject}`);
 
         if (response.data == null) {
           console.log(response);
@@ -55,7 +55,7 @@ const HomePage = () => {
 
   // Function to handle fetching all subjects
   const HandleAllSubject = async (e)=>{
-    const allSubject = await axios.get("http://localhost:4500/api/bank/getallSubject");
+    const allSubject = await axios.get(`${BASEURL}/api/bank/getallSubject`);
     setAllSubject(allSubject);
   }
 

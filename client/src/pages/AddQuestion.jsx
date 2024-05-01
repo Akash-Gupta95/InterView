@@ -5,6 +5,7 @@ import axios from "axios";
 import { multiStepContext } from "../contaxt/contaxtApi";
 import './AddQuestionStyle.css';
 import DefaultLayout from "../component/DefaultLayout";
+// import { BASEURL } from "../config";
 const AddQuestion = () => {
   const { allSubject } = useContext(multiStepContext);
   const [subject, setSubject] = useState("JavaScript");
