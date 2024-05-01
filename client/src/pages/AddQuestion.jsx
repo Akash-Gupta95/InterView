@@ -49,8 +49,7 @@ const AddQuestion = () => {
   };
 
   useEffect(() => {
-    const AllTopicBySubject =
-      allSubject && allSubject.data.find((topic) => topic.subject === subject);
+    const AllTopicBySubject = allSubject && allSubject.data.find((topic) => topic.subject === subject);
     setAllTopicBySubjectlist(AllTopicBySubject);
   }, [setSubject, subject]);
 
