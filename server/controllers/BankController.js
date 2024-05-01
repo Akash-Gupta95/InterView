@@ -84,7 +84,7 @@ export const addSubquestions = async (req, res) => {
 
     // // Save the updated topic back to the database
     const updatedTopic = await subjects.save();
-    console.log(questionData);
+  
     // res.status(200).json(updatedTopic);
   } catch (error) {
     console.error("Error adding subquestions:", error);

@@ -7,9 +7,6 @@ import './AddQuestionStyle.css';
 import DefaultLayout from "../component/DefaultLayout";
 import { BASEURL } from "../config";
 
-import 'react-toastify/dist/ReactToastify.css';
-
-
 const AddQuestion = () => {
   const { allSubject } = useContext(multiStepContext);
   const [subject, setSubject] = useState("JavaScript");
@@ -35,29 +32,8 @@ const AddQuestion = () => {
           questionData,
         }
       );
-
-      // toast.success("Queston Saved ", {
-      //   position: toast.POSITION.TOP_RIGHT,
-      //   autoClose: 2000, // milliseconds
-      //   hideProgressBar: false,
-      //   closeOnClick: true,
-      //   pauseOnHover: true,
-      //   draggable: true,
-      //   progress: undefined,
-      // });
-
     } catch (error) {
       console.log(error);
-
-      // toast.error("Failed to save question. Please try again later.", {
-      //   position: toast.POSITION.TOP_RIGHT,
-      //   autoClose: 2000,
-      //   hideProgressBar: false,
-      //   closeOnClick: true,
-      //   pauseOnHover: true,
-      //   draggable: true,
-      //   progress: undefined,
-      // });
     }
   };
 
@@ -150,7 +126,6 @@ const AddQuestion = () => {
 
             <div className="btn btn-primary" onClick={HandleSubmit}>
               Submit
-             
             </div>
             </div>
           </div>
