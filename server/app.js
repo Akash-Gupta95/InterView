@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import routes from './routes/bankRoutes.js';
 import {connectDB} from './config/dbConfig.js'
-import QuestionBankModel from './models/QuestionBankModel.js';
+
 const App= Express();
 // mongo Cridition
 const mongo = "mongodb+srv://reactDataBase:akash1234@todoapp.hjbu7lk.mongodb.net/"
