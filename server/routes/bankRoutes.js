@@ -1,6 +1,6 @@
-import expree from 'express';
+import express from 'express';
 import {  GetSingleQBank, QBank, addSubquestions } from '../controllers/BankController.js';
-const router = expree.Router();
+const router = express.Router();
 
 
 
