@@ -14,6 +14,8 @@ html, body{
     --secondary:#88a9c3;
     --Dark:#000;
     --White:#ffff;
+    --Ternry:antiquewhite;
+    --CenterBg:lightGrey
   }
 .mainContainer{
     background-color: var(--secondary) ;

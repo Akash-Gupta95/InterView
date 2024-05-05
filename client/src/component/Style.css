@@ -1,4 +1,12 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+.roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
 .footer{
     display: flex;
     justify-content: center;
@@ -13,7 +21,7 @@
     width: 40vw;
     height: 70vh;
     border-radius: 0 15px 15px 0px;
-    background-color: lightGrey;
+    background-color: var(--Dark);
     overflow-x: hidden;
     padding-right: 15px;
 }
@@ -23,8 +31,8 @@
     justify-content: center;
     width: 100%;
     margin-bottom: 25px;
-    background-color: var(--Dark);
-    color: white;
+    background-color: var(--primary);
+    color: var(--White);
     border-radius:0 15px 15px 0px;
 
 }
@@ -37,12 +45,21 @@
 padding: 10px;
 }
 
+.QuestionList{
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+    padding-left: 15px;
+    border-radius: 15px;
+}
+
 .topics{
 }
 .topics ul{
     list-style: none;
     padding: 0;
-   
+    font-family: "Roboto", sans-serif;
+   font-size: large;
   
 }
 .topics ul li{
@@ -63,7 +80,9 @@ padding: 10px;
     height: 70vh;
     margin-left: 2rem;
     border-radius: 15px 15px 0px 15px;
-    background-color: lightGrey;
+    background-color: var(--Dark);
+    color: var(--White);
+  
     overflow-x: hidden;
     padding-right: 15px;
     margin-bottom: 2.2rem;

@@ -4,9 +4,17 @@ import HomePage from './pages/HomePage';
 import { multiStepContext } from "./contaxt/contaxtApi";
 import { useState } from 'react';
 import AddQuestion from './pages/AddQuestion';
-
+import {useGSAP} from "@gsap/react"
+import gsap from "gsap";
 
 function App() {
+
+
+
+
+
+
+
   const [Bank, setBank] = useState({
     subject: "Fatching....",
     topics: [

@@ -6,8 +6,40 @@ import { multiStepContext } from "../contaxt/contaxtApi";
 import axios from "axios";
 import './pageStyle.css';
 import { BASEURL } from "../config";
+import {useGSAP} from "@gsap/react"
+import gsap from "gsap";
+
+
+
 const HomePage = () => {
   const { Bank, setBank, topic, setTopics, setSubject , subject , allSubject , setAllSubject} = useContext(multiStepContext);
+ // Function to animate with GSAP
+ const GsapAnimation = () => {
+  useGSAP(()=>{
+    gsap.from(".SubjectList div", {
+      delay: 0.7,
+      x: -400,
+      opacity: 0,
+      stagger: 0.2
+    });
+
+
+    gsap.from("div",{
+      x:-400
+    })
+
+
+  })
+
+
+};
+
+
+  GsapAnimation();
+
+
+  
+
 
 
   // Finding Question for Particular Topic
