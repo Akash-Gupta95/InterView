@@ -9,7 +9,7 @@ const DisplayQuestion = ({Questions , topic}) => {
       </div>
       <div className="topics">
         <ul>
-          {Questions.map((Q , index)=> {return <div className='QuestionList' key={index}>{`${index + 1}Q.  ${Q.q}`}
+          {Questions.map((Q , index)=> {return <div className='QuestionList' key={index}>{`Q ${index + 1}.  ${Q.q}`}
           <li key={index}>{`Ans. ${Q.ans}`}</li>
           </div>})}
         </ul>

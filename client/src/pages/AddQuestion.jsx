@@ -15,7 +15,6 @@ const AddQuestion = () => {
   const [answer, setAnswer] = useState("");
   const [AllTopicBySubjectlist, setAllTopicBySubjectlist] = useState();
   const [bool, setBool] = useState(true);
-  console.log(allSubject);
 
   const HandleSubmit = async () => {
     // Ensure that all required fields are provided
@@ -32,9 +31,14 @@ const AddQuestion = () => {
         { questionData }
       );
       console.log("Subquestion added successfully:", response.data);
+      setQuestion("");
+      setAnswer("");
     } catch (error) {
       console.error("Error adding subquestion:", error);
     }
+
+
+   
   };
 
   const HandeTopic = () => {
@@ -114,6 +118,8 @@ const AddQuestion = () => {
                 cols="50"
                 rows="5"
                 placeholder="Enter Your Question"
+                value={Question}
+
                 onChange={(e) => setQuestion(e.target.value)}
               ></textarea>
 
@@ -123,6 +129,7 @@ const AddQuestion = () => {
                 cols="50"
                 rows="5"
                 placeholder="  Enter Your Answer"
+                value={answer}
                 onChange={(e) => setAnswer(e.target.value)}
               ></textarea>
             </div>
