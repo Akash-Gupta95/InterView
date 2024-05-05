@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./pageStyle.css";
 import axios from "axios";
 import { multiStepContext } from "../contaxt/contaxtApi";
-import './AddQuestionStyle.css';
+import "./AddQuestionStyle.css";
 import DefaultLayout from "../component/DefaultLayout";
 import { BASEURL } from "../config";
 
@@ -15,7 +15,7 @@ const AddQuestion = () => {
   const [answer, setAnswer] = useState("");
   const [AllTopicBySubjectlist, setAllTopicBySubjectlist] = useState();
   const [bool, setBool] = useState(true);
-
+  console.log(allSubject);
 
   const HandleSubmit = async () => {
     // Ensure that all required fields are provided
@@ -23,9 +23,9 @@ const AddQuestion = () => {
       console.error("Missing required fields");
       return;
     }
-  
+
     const questionData = { subject, topic, Question, answer };
-  
+
     try {
       const response = await axios.post(
         `${BASEURL}/api/bank/add-subquestions`,
@@ -36,15 +36,15 @@ const AddQuestion = () => {
       console.error("Error adding subquestion:", error);
     }
   };
-  
+
   const HandeTopic = () => {
     // Toggle the boolean state
     setBool((prevBool) => !prevBool);
   };
-  
 
   useEffect(() => {
-    const AllTopicBySubject = allSubject && allSubject.data.find((topic) => topic.subject === subject);
+    const AllTopicBySubject =
+      allSubject && allSubject.data.find((topic) => topic.subject === subject);
     setAllTopicBySubjectlist(AllTopicBySubject);
   }, [setSubject, subject]);
 
@@ -53,8 +53,12 @@ const AddQuestion = () => {
       <div>
         <div className="container-fluid addQContainer bg-dark">
           <div className="row addQuestionRowDiv">
-            
             {/* Subject coloum for display */}
+
+            {/* Rendering list of all subjects */}
+            <div className="SubjectList subjectContainer d-flex m-3"></div>
+
+            {/* Extrating All Subject from SUbject List */}
             <div className="col-12 SubjectDiv">
               <select
                 name=""
@@ -62,38 +66,45 @@ const AddQuestion = () => {
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
               >
-                <option value="JavaScript">JavaScript</option>
-                <option value="React">React</option>
-                <option value="express">express</option>
-                <option value="MongoDb">MongoDb</option>
+                {allSubject?.data.map((e, i) => {
+                  return <option value={e.subject}>{e.subject}</option>;
+                })}
               </select>
             </div>
 
             {/* Topic coloum for display Topic  */}
             <div className="col-12 topicContainer">
               <div className="col-6">
-              {bool ?( <div className="selectBox">
-                <select
-                  name=""
-                  id=""
-                  value={topic}
-                  onChange={(e) => setTopic(e.target.value)}
-                >
-                  {AllTopicBySubjectlist?.topics?.map((topics , i) => (
-                    <option key={i} value={topics.name}>{topics.name}</option>
-                  ))}
-                </select>
-              </div>):(
-                 <div className="AddTopicBox">
-                 <input type="text" placeholder="Enter New Topic"  onChange={(e)=> setTopic(e.target.value)} />
-                 </div>
-              )
-            }
+                {bool ? (
+                  <div className="selectBox">
+                    <select
+                      name=""
+                      id=""
+                      value={topic}
+                      onChange={(e) => setTopic(e.target.value)}
+                    >
+                      {AllTopicBySubjectlist?.topics?.map((topics, i) => (
+                        <option key={i} value={topics.name}>
+                          {topics.name}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                ) : (
+                  <div className="AddTopicBox">
+                    <input
+                      type="text"
+                      placeholder="Enter New Topic"
+                      onChange={(e) => setTopic(e.target.value)}
+                    />
+                  </div>
+                )}
               </div>
               <div className="col-6">
-              <div className="btn btn-warning"  onClick={HandeTopic}>Add-Topic</div>
+                <div className="btn btn-warning" onClick={HandeTopic}>
+                  Add-Topic
+                </div>
               </div>
-
             </div>
 
             <div className="col-12 QuestionAnsDiv">
@@ -117,14 +128,11 @@ const AddQuestion = () => {
             </div>
 
             <div className="col-12 submitBtn">
-
-            <div className="btn btn-primary" onClick={HandleSubmit}>
-              Submit
-            </div>
+              <div className="btn btn-primary" onClick={HandleSubmit}>
+                Submit
+              </div>
             </div>
           </div>
-
-        
         </div>
       </div>
     </DefaultLayout>
