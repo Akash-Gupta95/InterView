@@ -117,6 +117,7 @@ const AddQuestion = () => {
                 id=""
                 cols="50"
                 rows="5"
+                style={{ whiteSpace: 'pre-wrap' }} 
                 placeholder="Enter Your Question"
                 value={Question}
 
@@ -128,6 +129,7 @@ const AddQuestion = () => {
                 id=""
                 cols="50"
                 rows="5"
+                style={{ whiteSpace: 'pre-wrap' }} 
                 placeholder="  Enter Your Answer"
                 value={answer}
                 onChange={(e) => setAnswer(e.target.value)}
