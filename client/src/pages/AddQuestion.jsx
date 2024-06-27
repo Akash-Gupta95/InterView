@@ -11,8 +11,8 @@ const AddQuestion = () => {
   const { allSubject } = useContext(multiStepContext);
   const [subject, setSubject] = useState("JavaScript");
   const [topic, setTopic] = useState({});
-  const [Question, setQuestion] = useState("");
-  const [answer, setAnswer] = useState("");
+  const [Question, setQuestion] = useState(``);
+  const [answer, setAnswer] = useState(``);
   const [AllTopicBySubjectlist, setAllTopicBySubjectlist] = useState();
   const [bool, setBool] = useState(true);
 
